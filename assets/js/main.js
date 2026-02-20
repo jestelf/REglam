@@ -1,4 +1,4 @@
-const menuToggle = document.getElementById("menuToggle");
+﻿const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
 const form = document.getElementById("reviewForm");
 const statusNode = document.getElementById("formStatus");
@@ -17,22 +17,22 @@ if (form && statusNode) {
 
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const severity = String(data.get("severity") || "").trim();
-    const comment = String(data.get("comment") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+    const service = String(data.get("service") || "").trim();
+    const master = String(data.get("master") || "").trim();
+    const date = String(data.get("date") || "").trim();
 
-    if (!name || !email || !severity || !comment) {
-      statusNode.textContent = "Заполните все поля перед отправкой.";
+    if (!name || !phone || !service || !master || !date) {
+      statusNode.textContent = "Проверьте форму и заполните обязательные поля.";
       return;
     }
 
-    if (!email.includes("@")) {
-      statusNode.textContent = "Укажите корректный email.";
+    if (phone.length < 10) {
+      statusNode.textContent = "Проверьте форму и заполните обязательные поля.";
       return;
     }
 
-    statusNode.textContent =
-      "Форма прошла базовую валидацию. Зафиксируйте замечание в docs/03_review_log.md.";
+    statusNode.textContent = "Заявка принята. Администратор свяжется с вами в течение 15 минут.";
     form.reset();
   });
 }

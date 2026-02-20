@@ -1,11 +1,13 @@
-:root {
-  --bg: #f7f4ec;
-  --surface: #fffdf8;
-  --ink: #1e2430;
-  --accent: #1a7f64;
-  --accent-2: #0b5d88;
-  --muted: #5d6778;
-  --line: #d8deea;
+﻿:root {
+  --bg: #f4efe7;
+  --surface: #fbf8f2;
+  --surface-strong: #fffdf9;
+  --ink: #1a1714;
+  --muted: #5f5650;
+  --line: #d9cdbc;
+  --accent: #8a5a2b;
+  --accent-dark: #69411d;
+  --focus: #c2943f;
 }
 
 * {
@@ -14,13 +16,13 @@
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif;
   color: var(--ink);
+  line-height: 1.55;
   background:
-    radial-gradient(circle at 15% 15%, #fff6d5 0%, transparent 35%),
-    radial-gradient(circle at 90% 10%, #d9eef8 0%, transparent 32%),
+    radial-gradient(circle at 10% 15%, #ece2d1 0%, transparent 35%),
+    radial-gradient(circle at 90% 10%, #dfd2bf 0%, transparent 32%),
     var(--bg);
-  line-height: 1.5;
 }
 
 .container {
@@ -33,6 +35,7 @@ body {
   left: -999px;
   top: 0;
   background: #fff;
+  color: #000;
   padding: 8px 12px;
 }
 
@@ -42,25 +45,28 @@ body {
 }
 
 .site-header {
-  border-bottom: 1px solid var(--line);
-  background: rgba(255, 253, 248, 0.92);
-  backdrop-filter: blur(4px);
   position: sticky;
   top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 248, 242, 0.94);
+  backdrop-filter: blur(3px);
 }
 
 .nav-wrap {
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  min-height: 64px;
+  gap: 12px;
 }
 
 .brand {
-  text-decoration: none;
-  color: var(--ink);
+  font-size: 1.25rem;
   font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  color: var(--ink);
 }
 
 .menu {
@@ -73,18 +79,30 @@ body {
   text-decoration: none;
 }
 
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
 .menu-toggle {
   display: none;
 }
 
 .hero {
-  padding: 64px 0 40px;
+  padding: 70px 0 44px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .hero-card,
@@ -96,20 +114,43 @@ form {
   padding: 20px;
 }
 
+.media {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+}
+
+.media-hero {
+  height: 220px;
+}
+
+.media-banner {
+  height: 280px;
+  margin-bottom: 16px;
+}
+
+.hero-card {
+  background: var(--surface-strong);
+}
+
 .hero-actions {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .btn {
   display: inline-block;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 9px;
   padding: 10px 14px;
   text-decoration: none;
   cursor: pointer;
   font: inherit;
+  font-size: 0.95rem;
 }
 
 .btn-primary {
@@ -119,20 +160,21 @@ form {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: #136e57;
+  background: var(--accent-dark);
 }
 
 .btn-secondary {
-  border-color: var(--accent-2);
-  color: var(--accent-2);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  background: #f7efdf;
 }
 
 .section {
-  padding: 28px 0 44px;
+  padding: 30px 0 46px;
 }
 
 .section-alt {
-  background: #eef7fa;
+  background: #e8ddcb;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -141,6 +183,11 @@ form {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+}
+
+.price {
+  margin-top: 10px;
+  font-weight: 700;
 }
 
 .form-wrap {
@@ -162,8 +209,9 @@ textarea {
   width: 100%;
   margin-bottom: 14px;
   padding: 10px 12px;
-  border: 1px solid #a9b6c9;
+  border: 1px solid #ad9d88;
   border-radius: 10px;
+  background: #fff;
   font: inherit;
 }
 
@@ -173,7 +221,7 @@ textarea:focus-visible,
 .menu a:focus-visible,
 .btn:focus-visible,
 .menu-toggle:focus-visible {
-  outline: 3px solid #ff9d00;
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -184,14 +232,19 @@ textarea:focus-visible,
 }
 
 .site-footer {
+  border-top: 1px solid var(--line);
   padding: 20px 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .hero-grid,
   .form-wrap,
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .header-actions {
+    display: none;
   }
 
   .menu-toggle {
@@ -200,7 +253,7 @@ textarea:focus-visible,
 
   .menu {
     position: absolute;
-    top: 64px;
+    top: 76px;
     right: 4vw;
     display: none;
     flex-direction: column;
@@ -208,6 +261,7 @@ textarea:focus-visible,
     border: 1px solid var(--line);
     padding: 12px;
     border-radius: 10px;
+    min-width: 180px;
   }
 
   .menu.is-open {

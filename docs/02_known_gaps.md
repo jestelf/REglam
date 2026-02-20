@@ -1,39 +1,28 @@
-# 02 Known Gaps (GapCardV2)
+﻿# 02 Known Gaps (GapCardV2)
 
 ## Формат
 `id, description, reason, expected, risk, impact, mitigation, target_version, status`
 
 ## Карточки
 
-### GAP-01
-- id: `GAP-01`
-- description: Нет автоматизированного хранилища замечаний, используется ручная фиксация.
-- reason: Проект ограничен статикой без backend.
-- expected: Замечания создаются и отслеживаются автоматически.
-- risk: Medium
-- impact: Потеря части контекста при ручном переносе комментариев.
-- mitigation: Строгий шаблон `ReviewIssueV2` + обязательная трассировка в `docs/04_decisions.md`.
+### GAP-10
+- id: `GAP-10`
+- description: Проект намеренно содержит учебные UX/A11y-дефекты.
+- reason: Нужен стенд для воспроизводимого ревью и тренировки диагностики.
+- expected: Для продуктового релиза дефекты должны быть устранены.
+- risk: High
+- impact: Текущая версия не проходит итоговые quality-gates.
+- mitigation: Зафиксированы `issue_id`, тест-кейсы и риски; план устранения переносится в следующую итерацию.
 - target_version: `Final+1`
 - status: Open
 
-### GAP-02
-- id: `GAP-02`
-- description: Нет автоматического e2e smoke для ключевых сценариев.
-- reason: Не внедрен тест-раннер в обязательный контур.
-- expected: Автоматизированный smoke на основной и альтернативный сценарии.
+### GAP-11
+- id: `GAP-11`
+- description: Нет автоматизированного e2e smoke для сценариев записи.
+- reason: В контуре не подключен test runner.
+- expected: Регулярный автопрогон happy/invalid/recovery.
 - risk: Medium
-- impact: Ручные регрессии могут быть пропущены.
+- impact: Возможны пропуски регресса при ручном прогоне.
 - mitigation: Полный ручной прогон `docs/07_test_matrix.md` на каждом freeze.
-- target_version: `Final+1`
-- status: Open
-
-### GAP-03
-- id: `GAP-03`
-- description: Нет выделенного UI-kit документа с токенами компонентов.
-- reason: На v01-v04 фокус на сценариях и quality-gates.
-- expected: Формализованный UI-kit для масштабирования.
-- risk: Low
-- impact: Риск несогласованности визуальных решений при расширении проекта.
-- mitigation: Фиксировать изменения UI в `docs/08_release_notes.md` до появления UI-kit.
 - target_version: `Final+1`
 - status: Open

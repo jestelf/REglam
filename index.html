@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UI/UX Review Sandbox</title>
+  <title>North Line Barbershop</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -11,13 +11,17 @@
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#" class="brand">Sandbox</a>
+      <a href="#hero" class="brand">North Line</a>
       <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menu">Меню</button>
       <nav id="menu" class="menu" aria-label="Главная навигация">
-        <a href="#hero">Старт</a>
-        <a href="#features">Возможности</a>
-        <a href="#feedback">Обратная связь</a>
+        <a href="#services">Услуги</a>
+        <a href="#masters">Мастера</a>
+        <a href="#booking">Запись</a>
       </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#booking">Записаться</a>
+        <a class="btn btn-primary" href="#services">Все услуги</a>
+      </div>
     </div>
   </header>
 
@@ -25,68 +29,112 @@
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div>
-          <h1>Локальный UI/UX стенд для ревью</h1>
+          <p class="eyebrow">Классический premium-уход</p>
+          <h1>Барбершоп для тех, кто ценит точную форму и спокойный ритуал</h1>
           <p>
-            Демонстрационный сайт с формализованным разбором ошибок и
-            незавершенных деталей.
+            Работаем по записи, подбираем мастера под ваш стиль и держим стабильный стандарт сервиса
+            в каждом визите.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#feedback">Начать сценарий</a>
-            <a class="btn btn-secondary" href="#features">Альтернативный путь</a>
+            <a class="btn btn-primary" href="#booking">Смотреть услуги</a>
+            <a class="btn btn-secondary" href="#masters">Познакомиться с мастерами</a>
           </div>
         </div>
-        <div class="hero-card" aria-label="Декоративная панель">
-          <h2>Статус итерации</h2>
-          <p>v01: черновик для обсуждения и фиксации замечаний.</p>
-        </div>
+        <aside class="hero-card" aria-label="Панель графика">
+          <img class="media media-hero" src="assets/img/hero-interior.jpg" alt="Интерьер барбершопа с креслами и рабочей зоной">
+          <h2>Сегодня в работе</h2>
+          <p>8:00-22:00, 2 свободных окна на вечер.</p>
+          <p>Средний чек: 2 200 ₽, длительность визита: 45-60 мин.</p>
+        </aside>
       </div>
     </section>
 
-    <section id="features" class="section">
+    <section id="services" class="section">
       <div class="container">
-        <h2>Что проверяют участники</h2>
+        <h2>Услуги</h2>
         <div class="cards">
           <article class="card">
-            <h3>UI</h3>
-            <p>Сетка, типографика, отступы, контраст, состояние кнопок.</p>
+            <img class="media" src="assets/img/service-shop.jpg" alt="Мастер работает с клиентом в кресле">
+            <h3>Классическая стрижка</h3>
+            <p>Четкая форма, укладка и рекомендации по домашнему уходу.</p>
+            <p class="price">от 1 800 ₽</p>
           </article>
           <article class="card">
-            <h3>UX</h3>
-            <p>Понятность шагов, скорость прохождения сценариев, ошибки ввода.</p>
+            <img class="media" src="assets/img/service-vintage.jpg" alt="Винтажная атмосфера барбершопа и рабочее место">
+            <h3>Стрижка + борода</h3>
+            <p>Комбинированный сервис для единого силуэта лица и линии роста.</p>
+            <p class="price">от 2 600 ₽</p>
           </article>
           <article class="card">
-            <h3>A11y</h3>
-            <p>Фокус, семантика, `alt`, удобство с клавиатуры.</p>
+            <img class="media" src="assets/img/service-royal-shave.jpg" alt="Бритье опасной бритвой в барбершопе">
+            <h3>Королевское бритье</h3>
+            <p>Горячее полотенце, опасная бритва и финишный уход.</p>
+            <p class="price">от 2 200 ₽</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="feedback" class="section section-alt">
+    <section id="masters" class="section section-alt">
+      <div class="container">
+        <h2>Мастера</h2>
+        <img class="media media-banner" src="assets/img/masters-shop.jpg" alt="Барбершоп в рабочий день">
+        <div class="cards">
+          <article class="card">
+            <img class="media" src="assets/img/master-artem.jpg" alt="Барбер Артем за работой">
+            <h3>Артем</h3>
+            <p>Skin fade, текстура, современные формы.</p>
+          </article>
+          <article class="card">
+            <img class="media" src="assets/img/master-lev.jpg" alt="Барбер Лев выполняет мужскую стрижку">
+            <h3>Лев</h3>
+            <p>Классика и деловой стиль, аккуратная борода.</p>
+          </article>
+          <article class="card">
+            <img class="media" src="assets/img/master-ruslan.jpg" alt="Барбер Руслан в процессе стрижки">
+            <h3>Руслан</h3>
+            <p>Сложная геометрия и восстановление формы.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section">
       <div class="container form-wrap">
         <div>
-          <h2>Мини-форма проверки</h2>
-          <p>Используйте форму для проверки интерактива и валидации.</p>
+          <h2>Запись на визит</h2>
+          <p>Оставьте контакты и параметры услуги. Мы подтвердим слот звонком.</p>
         </div>
         <form id="reviewForm" novalidate>
           <label for="name">Имя</label>
           <input id="name" name="name" autocomplete="name" required>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" autocomplete="tel" required>
 
-          <label for="severity">Критичность замечания</label>
-          <select id="severity" name="severity" required>
-            <option value="">Выберите</option>
-            <option value="Critical">Critical</option>
-            <option value="Major">Major</option>
-            <option value="Minor">Minor</option>
+          <label for="service">Услуга</label>
+          <select id="service" name="service" required>
+            <option value="">Выберите услугу</option>
+            <option value="haircut">Классическая стрижка</option>
+            <option value="combo">Стрижка + борода</option>
+            <option value="shave">Королевское бритье</option>
           </select>
 
-          <label for="comment">Комментарий</label>
-          <textarea id="comment" name="comment" rows="4" required></textarea>
+          <label for="master">Мастер</label>
+          <select id="master" name="master" required>
+            <option value="">Выберите мастера</option>
+            <option value="artem">Артем</option>
+            <option value="lev">Лев</option>
+            <option value="ruslan">Руслан</option>
+          </select>
 
-          <button class="btn btn-primary" type="submit">Отправить</button>
+          <label for="date">Дата визита</label>
+          <input id="date" name="date" type="date" required>
+
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" rows="4" placeholder="Например: нужен акцент на затылочной зоне"></textarea>
+
+          <button class="btn btn-primary" type="submit">Отправить заявку</button>
           <p id="formStatus" class="status" aria-live="polite"></p>
         </form>
       </div>
@@ -95,7 +143,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>UI/UX Review Sandbox · Локальный режим · Pass/Fail</p>
+      <p>North Line Barbershop · Локальный UX review-стенд · 2026</p>
     </div>
   </footer>
 

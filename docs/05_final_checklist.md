@@ -1,4 +1,4 @@
-# 05 Final Checklist (GateResult)
+﻿# 05 Final Checklist (GateResult)
 
 ## Формат GateResult
 `gate_id, criteria, pass_fail, evidence_ref, owner, updated_at`
@@ -10,7 +10,7 @@
   - шаблоны `GapCardV2`, `ReviewIssueV2`, `DecisionRecordV2` применены;
   - релизный цикл и риски задокументированы.
 - pass_fail: `PASS`
-- evidence_ref: `docs/00_reglament_single_dev.md`, `docs/06_quality_gates.md`, `docs/08_release_notes.md`
+- evidence_ref: `docs/01_spec_scope.md`, `docs/03_review_log.md`, `docs/08_release_notes.md`
 - owner: `Author`
 - updated_at: `2026-02-20`
 
@@ -18,10 +18,10 @@
 - gate_id: `GATE-B`
 - criteria:
   - 2 сценария end-to-end;
-  - `happy/invalid/recovery` отражены в тест-матрице;
-  - нет открытых `Critical` по A11y.
+  - покрыты `happy/invalid/recovery`;
+  - нет открытых критичных UX/A11y блокеров.
 - pass_fail: `FAIL`
-- evidence_ref: `docs/07_test_matrix.md`, `docs/03_review_log.md` (`A11Y-001`)
+- evidence_ref: `docs/07_test_matrix.md`, `docs/03_review_log.md`
 - owner: `Author`
 - updated_at: `2026-02-20`
 
@@ -30,7 +30,7 @@
 - criteria:
   - нет критических ошибок консоли;
   - нет тяжелых неиспользуемых ассетов;
-  - микрокопирайт согласован, отсутствуют `lorem/todo/tbd`.
+  - единый tone of voice.
 - pass_fail: `PASS`
 - evidence_ref: `docs/07_test_matrix.md`
 - owner: `Author`
@@ -40,8 +40,8 @@
 - gate_id: `GATE-D`
 - criteria:
   - `Critical/Open = 0`;
-  - `Major/Open = 0` или `Accepted with rationale + Expiry`;
-  - post-freeze изменения оформлены в `docs/04_decisions.md`.
+  - `Major/Open = 0` или formal accept с expiry;
+  - post-freeze решения задокументированы.
 - pass_fail: `FAIL`
 - evidence_ref: `docs/03_review_log.md`, `docs/04_decisions.md`
 - owner: `Author`
@@ -50,4 +50,4 @@
 ## Финальный статус
 - `PASS`: нет
 - `FAIL`: да
-- причина: открыт `A11Y-001` (Critical), что блокирует `GATE-B` и `GATE-D`.
+- причина: намеренно открытые `UX-BRB-001`, `UX-BRB-002`, `UX-BRB-003`, `A11Y-BRB-001`.

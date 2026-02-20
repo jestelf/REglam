@@ -1,7 +1,8 @@
-# 03 Review Log (ReviewIssueV2)
+﻿# 03 Review Log (ReviewIssueV2)
 
 | issue_id | category | severity | location | environment | steps | expected | actual | frequency | regression_risk | developer_comment | decision | status |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| UI-001 | UI | Minor | Hero / карточка статуса | Win11, Chrome 122, 1280x720 | Открыть главную страницу и сравнить иерархию заголовков в Hero и карточке справа | Ясная визуальная иерархия H1 и вторичных заголовков | Заголовки визуально близки по весу, читаемость контекста ниже ожидаемой | Always | Low | Улучшить размерный шаг и контраст в v04 | Defer to Final+1 | Open |
-| UX-001 | UX | Major | Форма / submit | Win11, Chrome 122, 1280x720 | Оставить поля пустыми, нажать отправку | Поля с ошибкой подсвечены и сообщение направляет к исправлению | Есть общее сообщение, нет явной поэлементной подсветки | Intermittent | Medium | Требование v2.0: локальная индикация каждого поля | Accepted with rationale (DEC-004, expiry RC) | Resolved |
-| A11Y-001 | A11y | Critical | Mobile menu / keyboard | Win11, Chrome 122, 360x740 | Открыть меню, пройти Tab/Shift+Tab, попытаться вернуться к триггеру | Управляемый цикл фокуса в пределах открытого меню | Нет trap-focus, фокус уходит за пределы меню | Always | High | Блокер финальной приемки до исправления | Planned for v04 | Open |
+| UX-BRB-001 | UX | Major | Hero CTA | Win11, Chrome, 1280x720 | Открыть сайт, нажать CTA `Смотреть услуги` | Переход к секции услуг | Переход сразу к форме записи (`#booking`) | Always | Medium | Намеренный конфликт ожидания и результата | DEC-005 | Open |
+| UX-BRB-002 | UX | Major | Форма записи / submit | Win11, Chrome, 1280x720 | Оставить обязательные поля пустыми и отправить форму | Ошибки по полям + фокус на первом невалидном поле | Только общее сообщение без field-level подсказок и автофокуса | Always | High | Намеренно упрощенный recovery-path | DEC-005 | Open |
+| UX-BRB-003 | UX | Minor | Header CTA hierarchy | Win11, Chrome, 1280x720 | Сравнить визуальный приоритет двух CTA в шапке | Вторичный CTA визуально слабее primary | Вторичный CTA стилизован как primary и конкурирует по весу | Always | Low | Намеренный дефект визуальной иерархии | DEC-005 | Open |
+| A11Y-BRB-001 | A11y | Minor | Mobile menu / keyboard | Win11, Chrome, 360x740 | Открыть мобильное меню, пройти Tab/Shift+Tab | Фокус остается в открытом меню | Нет focus trap, фокус уходит за пределы drawer | Always | Medium | Учебный A11y-дефект в рамках UX-кейса | DEC-005 | Open |
